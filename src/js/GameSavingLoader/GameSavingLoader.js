@@ -9,7 +9,8 @@ export class GameSavingLoader {
     return new Promise((resolve, reject) => {
       resolve(read()
         .then((result) => json(result))
-        .then((saving) => new GameSaving(JSON.parse(saving))));
+        .then((saving) => new GameSaving(JSON.parse(saving)))
+        .catch((error) => console.log(error)));
     });
   }
 }
